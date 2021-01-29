@@ -445,7 +445,8 @@ def dotplot(df, column='Adjusted P-value', title='', cutoff=0.05, top_term=10,
     ax.set_xlabel(xlabel, fontsize=14, fontweight='bold')
     ax.yaxis.set_major_locator(plt.FixedLocator(y))
     ax.yaxis.set_major_formatter(plt.FixedFormatter(ylabels))
-    ax.set_yticklabels(ylabels, fontsize=16)
+    ##ax.set_yticklabels(ylabels, fontsize=16)
+    ax.set_yticklabels(ylabels, fontsize=18)
     
     # ax.set_ylim([-1, len(df)])
     ax.grid()
@@ -520,7 +521,8 @@ def barplot(df, column='Adjusted P-value', title="", cutoff=0.05, top_term=10,
         canvas = FigureCanvas(fig)
     ax = fig.add_subplot(111)
     bar = dd.plot.barh(x='Term', y=colname, color=color, 
-                       alpha=0.75, fontsize=16, ax=ax)
+##                       alpha=0.75, fontsize=16, ax=ax)
+                        alpha=0.75, fontsize=18, ax=ax)
     
     if column in ['Adjusted P-value', 'P-value']:
         xlabel = "-log$_{10}$(%s)"%column
